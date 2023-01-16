@@ -32,6 +32,9 @@
 $ npm install
 ```
 
+## Docker
+$ docker-compose up
+
 ## Running the app
 
 ```bash
@@ -45,22 +48,13 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Libraries
+# class-validator y class-transformer --> DTO's validation
+# jsonwebtoken y passport-jwt --> token generate
+# dotenv --> enviroment path configuration
+# bcrypt --> password encriptation
+# mongoose --> ORM MongoDB
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
 ## Stay in touch
 
