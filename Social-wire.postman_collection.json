@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "edacc90b-777a-48ac-a981-b0982eafc609",
+		"name": "Social-wire",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22599602"
+	},
+	"item": [
+		{
+			"name": "Auth-SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"pedro\",\r\n    \"email\": \"pedro@gmail.com\",\r\n    \"password\": \"2233\",\r\n    \"fullname\": \"Pedro diaz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/wires/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wires",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth-signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"pedro\",\r\n    \"password\": \"2233\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/wires/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wires",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create-Message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzRiMmQ0MzQ0YWQwODkyZTI4MWIxYyIsImVtYWlsIjoicGVkcm9AZ21haWwuY29tIiwiaWF0IjoxNjczODM1MjQwLCJleHAiOjE2NzM5MjE2NDB9.rsuB1_ehkjPfZJLrXrN0cXIci-TZpkjXnrmBx0sf-JA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"nuevo mensaje\",\r\n    \"content\": \"Este es un nuevo mensaje\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/wires/messages/iddelusuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wires",
+						"messages",
+						"iddelusuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all messages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzRiMmQ0MzQ0YWQwODkyZTI4MWIxYyIsImVtYWlsIjoicGVkcm9AZ21haWwuY29tIiwiaWF0IjoxNjczODM1MjQwLCJleHAiOjE2NzM5MjE2NDB9.rsuB1_ehkjPfZJLrXrN0cXIci-TZpkjXnrmBx0sf-JA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/wires/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wires",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get my messages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzRiMmQ0MzQ0YWQwODkyZTI4MWIxYyIsImVtYWlsIjoicGVkcm9AZ21haWwuY29tIiwiaWF0IjoxNjczODM1MjQwLCJleHAiOjE2NzM5MjE2NDB9.rsuB1_ehkjPfZJLrXrN0cXIci-TZpkjXnrmBx0sf-JA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/wires/messages/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wires",
+						"messages",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get only message by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzRiMmQ0MzQ0YWQwODkyZTI4MWIxYyIsImVtYWlsIjoicGVkcm9AZ21haWwuY29tIiwiaWF0IjoxNjczODM1MjQwLCJleHAiOjE2NzM5MjE2NDB9.rsuB1_ehkjPfZJLrXrN0cXIci-TZpkjXnrmBx0sf-JA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/wires/messages/me/iddelusuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wires",
+						"messages",
+						"me",
+						"iddelusuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete me message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzRiMmQ0MzQ0YWQwODkyZTI4MWIxYyIsImVtYWlsIjoicGVkcm9AZ21haWwuY29tIiwiaWF0IjoxNjczODM1MjQwLCJleHAiOjE2NzM5MjE2NDB9.rsuB1_ehkjPfZJLrXrN0cXIci-TZpkjXnrmBx0sf-JA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/wires/messages/iddelusuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wires",
+						"messages",
+						"iddelusuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzRiMmQ0MzQ0YWQwODkyZTI4MWIxYyIsImVtYWlsIjoicGVkcm9AZ21haWwuY29tIiwiaWF0IjoxNjczODM1MjQwLCJleHAiOjE2NzM5MjE2NDB9.rsuB1_ehkjPfZJLrXrN0cXIci-TZpkjXnrmBx0sf-JA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comment\": \"string\",\r\n    \"author\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/wires/messages/comment/iddelcomentario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wires",
+						"messages",
+						"comment",
+						"iddelcomentario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Reaction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzRiMmQ0MzQ0YWQwODkyZTI4MWIxYyIsImVtYWlsIjoicGVkcm9AZ21haWwuY29tIiwiaWF0IjoxNjczODM1MjQwLCJleHAiOjE2NzM5MjE2NDB9.rsuB1_ehkjPfZJLrXrN0cXIci-TZpkjXnrmBx0sf-JA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"reaction\": \"string\",\r\n    \"author\": \"63c5ad2fa39e3165db969337\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/wires/messages/reaction/63c5adeecb7f856bdcb0075e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"wires",
+						"messages",
+						"reaction",
+						"63c5adeecb7f856bdcb0075e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
