@@ -50,9 +50,13 @@ $ npm run start:prod
 
 ## Libraries
 class-validator y class-transformer --> DTO's validation
+
 jsonwebtoken y passport-jwt --> token generate
+
 dotenv --> enviroment path configuration
+
 bcrypt --> password encriptation
+
 mongoose --> ORM MongoDB
 
 
