@@ -25,7 +25,7 @@ export class AuthService {
       const passwordToHash = await basicCrypt(password);
       userObject = { ...userObject, password: passwordToHash };
       const userCreated = this.usuarioModel.create(userObject);
-      (await userCreated).set('password', undefined, { stric: false });
+      (await userCreated).set('password', undefined, { stric: false }); // oculto la contraseña
       return userCreated;
     } catch (error) {
       throw new Error(error);
@@ -46,7 +46,7 @@ export class AuthService {
         .findOne({
           username: username,
         })
-        .select('password');
+        .select('password'); // la contraseña estaba oculta al momento de crear, de esta manera la traigo para poder hacer la comparacion
       const checkPassword = await compareToEncrypted(
         password,
         hashPassword.password,
@@ -56,7 +56,7 @@ export class AuthService {
       }
       const ocultPassword = userExists.set('password', undefined, {
         stric: false,
-      });
+      }); // vuelvo a ocultar la contraseña
       const payload = { id: userExists._id, email: userExists.email };
       const token = this.jwtService.sign(payload);
       const data = {
@@ -71,12 +71,20 @@ export class AuthService {
   }
 
   async delete(id: ObjectId) {
-    const deleted = await this.usuarioModel.deleteOne({ _id: id });
-    return `Usuario eliminado`;
+    try {
+      const deleted = await this.usuarioModel.deleteOne({ _id: id });
+      return `Usuario eliminado`;
+    } catch (error) {
+      throw new Error(error);
+    }
   }
 
   async getAll() {
-    const allUsers = await this.usuarioModel.find({});
-    return allUsers;
+    try {
+      const allUsers = await this.usuarioModel.find({});
+      return allUsers;
+    } catch (error) {
+      throw new Error(error);
+    }
   }
 }

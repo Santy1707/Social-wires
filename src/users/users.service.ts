@@ -16,7 +16,7 @@ export class UsersService {
         const user = await this.usuarioModel.findOne({ name: name });
         return user ? user : `Sin resultados de busqueda para ${name}`;
       }
-      const allUsers = await this.usuarioModel.find({ IsBanned: false });
+      const allUsers = await this.usuarioModel.find();
       return allUsers.length
         ? allUsers
         : new HttpException('NO_HAY_USUARIOS', 403);
